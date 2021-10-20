@@ -1,0 +1,72 @@
+{
+  "name": "UiPath_CanonCameraActivities_Samples",
+  "description": "Set of Samples to use UiPath Custom Activities for Canon EOS cameras",
+  "main": "Main.xaml",
+  "dependencies": {
+    "Mihaly.Camera.Activities": "[1.0.0.1018103858]",
+    "UiPath.Excel.Activities": "[2.11.1-preview]",
+    "UiPath.Mail.Activities": "[1.10.0-preview]",
+    "UiPath.System.Activities": "[20.10.3]",
+    "UiPath.Testing.Activities": "[1.4.1-preview]",
+    "UiPath.UIAutomation.Activities": "[21.2.0-preview]",
+    "UiPath.WebAPI.Activities": "[1.9.1-preview]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "20.10.4.0",
+  "projectVersion": "1.0.0",
+  "runtimeOptions": {
+    "exceptionHandlerWorkflow": "GlobalHandler.xaml",
+    "autoDispose": false,
+    "isPausable": true,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "54bdb442-bab7-4ea8-8025-a7bed44e827b",
+        "dataVariationFilePath": ".variations\\Settings_Feuil1.json",
+        "fileName": "Tests\\TestCase_GetCameraCapabilities.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "b18785d9-e8bd-48c0-b15b-6d700ef68f16",
+        "dataVariationFilePath": ".variations\\Settings_Feuil1_1.json",
+        "fileName": "Tests\\TestCase_SetCameraSettings.xaml"
+      }
+    ],
+    "modernBehavior": true
+  },
+  "expressionLanguage": "CSharp",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "0abb5168-e2d3-4cff-b870-97613b690757",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Legacy"
+}

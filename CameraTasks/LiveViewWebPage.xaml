@@ -1,0 +1,846 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SimpleSequenceLoadSDKAndTakePicture" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Mihaly.Camera.Activities;assembly=Mihaly.Camera.Activities" xmlns:mca1="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=mscorlib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:usa="clr-namespace:UiPath.Shared.Activities;assembly=Mihaly.Camera.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>1589.6,9168</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="64">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>Mihaly.Camera.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.Shared.Activities.Utilities</x:String>
+      <x:String>UiPath.Shared.Activities.Localization</x:String>
+      <x:String>UiPath.Shared.Activities.Contracts</x:String>
+      <x:String>Mihaly.Camera.Activities.Properties</x:String>
+      <x:String>XamlGeneratedNamespace</x:String>
+      <x:String>UiPath.Shared.Activities.Design.Services</x:String>
+      <x:String>UiPath.Shared.Activities.Design.Editors</x:String>
+      <x:String>UiPath.Shared.Activities.Design.Converters</x:String>
+      <x:String>UiPath.Shared.Activities.Design.Controls</x:String>
+      <x:String>Mihaly.Camera.Activities.Design</x:String>
+      <x:String>Mihaly.Camera.Activities.Design.Properties</x:String>
+      <x:String>Mihaly.Camera.Activities.Design.Designers</x:String>
+      <x:String>Mihaly.Camera.Enums</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>Mihaly.Camera.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>System.Activities.Presentation</AssemblyReference>
+      <AssemblyReference>System.Activities.Core.Presentation</AssemblyReference>
+      <AssemblyReference>Mihaly.Camera.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>Mihaly.Camera</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Sequence SDK" sap:VirtualizedContainerService.HintSize="1600,9003.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="result" />
+      <Variable x:TypeArguments="x:String" Name="imageDir">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" Value="" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="s:String[]" Name="Cameras" />
+      <Variable x:TypeArguments="x:String" Default="Yes" Name="choice" />
+      <Variable x:TypeArguments="ui:UiElement" Name="uiBrowserWindow" />
+      <Variable x:TypeArguments="x:Boolean" Default="True" Name="bContinue" />
+      <Variable x:TypeArguments="ui:UiElement" Name="uiLiveViewTextField" />
+      <Variable x:TypeArguments="s:Byte[]" Name="bytesLiveViewStream" />
+      <Variable x:TypeArguments="x:String" Name="strLiveViewStream" />
+      <Variable x:TypeArguments="s:Enum" Name="cameraStatus" />
+      <Variable x:TypeArguments="x:String" Name="strCameraSettings" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1558.4,8910.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <mca:CanonCameras ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="1521.6,8679.2" sap2010:WorkflowViewState.IdRef="CanonCameras_3">
+          <mca:CanonCameras.Body>
+            <ActivityAction x:TypeArguments="usa:IObjectContainer">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="usa:IObjectContainer" Name="ScopeActivity" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1488,8592.8" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <mca:GetCameras ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="1446.4,22.4" sap2010:WorkflowViewState.IdRef="GetCameras_3">
+                  <mca:GetCameras.Cameras>
+                    <OutArgument x:TypeArguments="s:String[]">
+                      <mca1:CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">Cameras</mca1:CSharpReference>
+                    </OutArgument>
+                  </mca:GetCameras.Cameras>
+                </mca:GetCameras>
+                <If sap:VirtualizedContainerService.HintSize="1446.4,8437.6" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If.Condition>
+                    <InArgument x:TypeArguments="x:Boolean">
+                      <mca1:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">Cameras.Length &gt; 0</mca1:CSharpValue>
+                    </InArgument>
+                  </If.Condition>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="1068.8,8278.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - Open Session And Start Live View" sap:VirtualizedContainerService.HintSize="1027.2,4405.6" sap2010:WorkflowViewState.IdRef="ForEach`1_5">
+                        <ui:ForEach.Body>
+                          <ActivityAction x:TypeArguments="x:String">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:String" Name="camera" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="601.6,4271.2" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="560,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info">
+                                <ui:LogMessage.Message>
+                                  <InArgument x:TypeArguments="x:Object">
+                                    <mca1:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">"Open session and start Live View with " + camera</mca1:CSharpValue>
+                                  </InArgument>
+                                </ui:LogMessage.Message>
+                              </ui:LogMessage>
+                              <mca:StartSession ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="560,22.4" sap2010:WorkflowViewState.IdRef="StartSession_3">
+                                <mca:StartSession.CameraName>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca1:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">camera</mca1:CSharpValue>
+                                  </InArgument>
+                                </mca:StartSession.CameraName>
+                              </mca:StartSession>
+                              <ui:InterruptibleDoWhile DisplayName="Do While Camera Status IS NOT READY" sap:VirtualizedContainerService.HintSize="560,561.6" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_7">
+                                <ui:InterruptibleDoWhile.Body>
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="524.8,394.4" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <mca:GetCameraStatus ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="483.2,22.4" sap2010:WorkflowViewState.IdRef="GetCameraStatus_4">
+                                      <mca:GetCameraStatus.CameraName>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <mca1:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_81">camera</mca1:CSharpValue>
+                                        </InArgument>
+                                      </mca:GetCameraStatus.CameraName>
+                                      <mca:GetCameraStatus.CameraStatus>
+                                        <OutArgument x:TypeArguments="s:Enum">
+                                          <mca1:CSharpReference x:TypeArguments="s:Enum" sap2010:WorkflowViewState.IdRef="CSharpReference`1_26">cameraStatus</mca1:CSharpReference>
+                                        </OutArgument>
+                                      </mca:GetCameraStatus.CameraStatus>
+                                    </mca:GetCameraStatus>
+                                    <If sap:VirtualizedContainerService.HintSize="483.2,239.2" sap2010:WorkflowViewState.IdRef="If_5">
+                                      <If.Condition>
+                                        <InArgument x:TypeArguments="x:Boolean">
+                                          <mca1:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_106">cameraStatus.CompareTo(Mihaly.Camera.Enums.EnumTypes.CameraStatus.DOWN) == 0</mca1:CSharpValue>
+                                        </InArgument>
+                                      </If.Condition>
+                                      <If.Then>
+                                        <Throw DisplayName="Throw Camera Shutdown Detected" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_2">
+                                          <InArgument x:TypeArguments="s:Exception">
+                                            <mca1:CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_83">new BusinessRuleException("Camera Shutdown detected!")</mca1:CSharpValue>
+                                          </InArgument>
+                                        </Throw>
+                                      </If.Then>
+                                    </If>
+                                  </Sequence>
+                                </ui:InterruptibleDoWhile.Body>
+                                <ui:InterruptibleDoWhile.Condition>
+                                  <mca1:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_105">cameraStatus.CompareTo(Mihaly.Camera.Enums.EnumTypes.CameraStatus.READY) != 0</mca1:CSharpValue>
+                                </ui:InterruptibleDoWhile.Condition>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:InterruptibleDoWhile>
+                              <mca:StartCapture ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="560,22.4" sap2010:WorkflowViewState.IdRef="StartCapture_1">
+                                <mca:StartCapture.CameraName>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca1:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">camera</mca1:CSharpValue>
+                                  </InArgument>
+                                </mca:StartCapture.CameraName>
+                              </mca:StartCapture>
+                              <ui:InterruptibleDoWhile DisplayName="Do While Camera Status IS NOT READY" sap:VirtualizedContainerService.HintSize="560,561.6" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_8">
+                                <ui:InterruptibleDoWhile.Body>
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="524.8,394.4" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <mca:GetCameraStatus ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="483.2,22.4" sap2010:WorkflowViewState.IdRef="GetCameraStatus_5">
+                                      <mca:GetCameraStatus.CameraName>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <mca1:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_85">camera</mca1:CSharpValue>
+                                        </InArgument>
+                                      </mca:GetCameraStatus.CameraName>
+                                      <mca:GetCameraStatus.CameraStatus>
+                                        <OutArgument x:TypeArguments="s:Enum">
+                                          <mca1:CSharpReference x:TypeArguments="s:Enum" sap2010:WorkflowViewState.IdRef="CSharpReference`1_27">cameraStatus</mca1:CSharpReference>
+                                        </OutArgument>
+                                      </mca:GetCameraStatus.CameraStatus>
+                                    </mca:GetCameraStatus>
+                                    <If sap:VirtualizedContainerService.HintSize="483.2,239.2" sap2010:WorkflowViewState.IdRef="If_6">
+                                      <If.Condition>
+                                        <InArgument x:TypeArguments="x:Boolean">
+                                          <mca1:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_108">cameraStatus.CompareTo(Mihaly.Camera.Enums.EnumTypes.CameraStatus.DOWN) == 0</mca1:CSharpValue>
+                                        </InArgument>
+                                      </If.Condition>
+                                      <If.Then>
+                                        <Throw DisplayName="Throw Camera Shutdown Detected" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_3">
+                                          <InArgument x:TypeArguments="s:Exception">
+                                            <mca1:CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_87">new BusinessRuleException("Camera Shutdown detected!")</mca1:CSharpValue>
+                                          </InArgument>
+                                        </Throw>
+                                      </If.Then>
+                                    </If>
+                                  </Sequence>
+                                </ui:InterruptibleDoWhile.Body>
+                                <ui:InterruptibleDoWhile.Condition>
+                                  <mca1:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_107">cameraStatus.CompareTo(Mihaly.Camera.Enums.EnumTypes.CameraStatus.READY) != 0</mca1:CSharpValue>
+                                </ui:InterruptibleDoWhile.Condition>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:InterruptibleDoWhile>
+                              <ui:InterruptibleDoWhile DisplayName="Do While First LiveView Can Be NULL" sap:VirtualizedContainerService.HintSize="560,345.6" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_12">
+                                <ui:InterruptibleDoWhile.Body>
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="375.2,178.4" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <mca:UpdateCapture ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="UpdateCapture_1">
+                                      <mca:UpdateCapture.CameraName>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <mca1:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">camera</mca1:CSharpValue>
+                                        </InArgument>
+                                      </mca:UpdateCapture.CameraName>
+                                      <mca:UpdateCapture.LiveView>
+                                        <OutArgument x:TypeArguments="s:Byte[]">
+                                          <mca1:CSharpReference x:TypeArguments="s:Byte[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">bytesLiveViewStream</mca1:CSharpReference>
+                                        </OutArgument>
+                                      </mca:UpdateCapture.LiveView>
+                                    </mca:UpdateCapture>
+                                  </Sequence>
+                                </ui:InterruptibleDoWhile.Body>
+                                <ui:InterruptibleDoWhile.Condition>
+                                  <mca1:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_101">bytesLiveViewStream == null</mca1:CSharpValue>
+                                </ui:InterruptibleDoWhile.Condition>
+                              </ui:InterruptibleDoWhile>
+                              <ui:InterruptibleDoWhile DisplayName="Do While Camera Status IS NOT READY" sap:VirtualizedContainerService.HintSize="560,561.6" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_9">
+                                <ui:InterruptibleDoWhile.Body>
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="524.8,394.4" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <mca:GetCameraStatus ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="483.2,22.4" sap2010:WorkflowViewState.IdRef="GetCameraStatus_6">
+                                      <mca:GetCameraStatus.CameraName>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <mca1:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_89">camera</mca1:CSharpValue>
+                                        </InArgument>
+                                      </mca:GetCameraStatus.CameraName>
+                                      <mca:GetCameraStatus.CameraStatus>
+                                        <OutArgument x:TypeArguments="s:Enum">
+                                          <mca1:CSharpReference x:TypeArguments="s:Enum" sap2010:WorkflowViewState.IdRef="CSharpReference`1_28">cameraStatus</mca1:CSharpReference>
+                                        </OutArgument>
+                                      </mca:GetCameraStatus.CameraStatus>
+                                    </mca:GetCameraStatus>
+                                    <If sap:VirtualizedContainerService.HintSize="483.2,239.2" sap2010:WorkflowViewState.IdRef="If_7">
+                                      <If.Condition>
+                                        <InArgument x:TypeArguments="x:Boolean">
+                                          <mca1:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_110">cameraStatus.CompareTo(Mihaly.Camera.Enums.EnumTypes.CameraStatus.DOWN) == 0</mca1:CSharpValue>
+                                        </InArgument>
+                                      </If.Condition>
+                                      <If.Then>
+                                        <Throw DisplayName="Throw Camera Shutdown Detected" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_4">
+                                          <InArgument x:TypeArguments="s:Exception">
+                                            <mca1:CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_91">new BusinessRuleException("Camera Shutdown detected!")</mca1:CSharpValue>
+                                          </InArgument>
+                                        </Throw>
+                                      </If.Then>
+                                    </If>
+                                  </Sequence>
+                                </ui:InterruptibleDoWhile.Body>
+                                <ui:InterruptibleDoWhile.Condition>
+                                  <mca1:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_109">cameraStatus.CompareTo(Mihaly.Camera.Enums.EnumTypes.CameraStatus.READY) != 0</mca1:CSharpValue>
+                                </ui:InterruptibleDoWhile.Condition>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:InterruptibleDoWhile>
+                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SaveStreamToStorage workflow" sap:VirtualizedContainerService.HintSize="560,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Utils\\SaveStreamToStorage.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <OutArgument x:TypeArguments="x:String" x:Key="outUrl">
+                                    <mca1:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">strLiveViewStream</mca1:CSharpReference>
+                                  </OutArgument>
+                                  <InArgument x:TypeArguments="s:Byte[]" x:Key="inBytesStream">
+                                    <mca1:CSharpValue x:TypeArguments="s:Byte[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">bytesLiveViewStream</mca1:CSharpValue>
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="inLiveViewDir">
+                                    <mca1:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_119">in_Config["LiveViewDir"].ToString()</mca1:CSharpValue>
+                                  </InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
+                              <mca:GetSettings ContinueOnError="{x:Null}" DisplayName="Get Settings" sap:VirtualizedContainerService.HintSize="560,22.4" sap2010:WorkflowViewState.IdRef="GetSettings_1">
+                                <mca:GetSettings.CameraName>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca1:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_115">camera</mca1:CSharpValue>
+                                  </InArgument>
+                                </mca:GetSettings.CameraName>
+                                <mca:GetSettings.Settings>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <mca1:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_32">strCameraSettings</mca1:CSharpReference>
+                                  </OutArgument>
+                                </mca:GetSettings.Settings>
+                                <mca:GetSettings.SettingsFormat>
+                                  <InArgument x:TypeArguments="s:Enum">
+                                    <mca1:CSharpValue x:TypeArguments="s:Enum" sap2010:WorkflowViewState.IdRef="CSharpValue`1_116">Mihaly.Camera.Enums.EnumTypes.CameraSettingsOutputFormat.JSON</mca1:CSharpValue>
+                                  </InArgument>
+                                </mca:GetSettings.SettingsFormat>
+                              </mca:GetSettings>
+                              <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Firefox: Nouvel onglet" sap:VirtualizedContainerService.HintSize="560,1514.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
+                                <uix:NApplicationCard.Body>
+                                  <ActivityAction x:TypeArguments="x:Object">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                    </ActivityAction.Argument>
+                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476.8,1297.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'camera name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="435.2,228" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate">
+                                        <uix:NTypeInto.Target>
+                                          <uix:TargetAnchorable BrowserURL="http://localhost:4200/" DesignTimeRectangle="168, 235, 255, 26" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl idx='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl type='text' tag='INPUT' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQMAAAAeCAYAAAAo7ns6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAC9SURBVHhe7dQhCgIBFEVR9zSYDDazS7C4iQG71UUYdQdmq2uwimv4wmNGFDQOiHMOvPLh1zupH3Q9H+q4W9e8aWqxvXRXYEg/GINb7VfTapppzZabOt27MzCoZwzatjWzEa73FgNgXMQACDEAQgyAEAMgxAAIMQBCDIAQAyDEAAgxAEIMgBADIMQACDEAQgyAEAMgxAAIMQBCDIAQAyDEAAgxAEIMgPgaAzMb33rPGLz69GBm/72vMQDGpOoBJL31+hwSzQYAAAAASUVORK5CYII=" InformativeScreenshot="e3723ea0086db9dd9563c3621b72c40e.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='MyCanonCamera' /&gt;" SearchSteps="Selector">
+                                            <uix:TargetAnchorable.Anchors>
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                <uix:Target DesignTimeRectangle="47, 235, 1260, 26" ElementType="InputBox" FriendlyName="'Camera name:'" FullSelectorArgument="&lt;webctrl aaname=' Camera name*' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Camera name*' tag='DIV' type='' /&gt;" ImageBase64="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" SearchSteps="Selector" />
+                                              </scg:List>
+                                            </uix:TargetAnchorable.Anchors>
+                                          </uix:TargetAnchorable>
+                                        </uix:NTypeInto.Target>
+                                        <uix:NTypeInto.Text>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <mca1:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">camera</mca1:CSharpValue>
+                                          </InArgument>
+                                        </uix:NTypeInto.Text>
+                                      </uix:NTypeInto>
+                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'camera model'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="435.2,228" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" Text="FIX ME!">
+                                        <uix:NTypeInto.Target>
+                                          <uix:TargetAnchorable BrowserURL="http://localhost:4200/" DesignTimeRectangle="173, 268, 255, 26" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl idx='1' name='model' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl type='text' name='model' tag='INPUT' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQMAAAAeCAYAAAAo7ns6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACRSURBVHhe7d0xCsQgAEXBnNvLu/hYAgHL3SI4Ax+EkPZh5zWBo4wxvqena30ws7O2c98Mdj+Y2RlbHjEAziMGQMQAiBgAEQMgYgBEDICIARAxACIGQMQAiBgAEQMgYgBEDICIARAxACIGQMQAiBgAEQMgYgBEDICIAZBtDMzszC2eVzP7097mvhkAv/O+GMz5AcU/rl4OjRD+AAAAAElFTkSuQmCC" InformativeScreenshot="1ff1b03acfc5c5006ff3cb5f98aee006.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='MyCanonCamera' /&gt;" SearchSteps="FuzzySelector, Image">
+                                            <uix:TargetAnchorable.Anchors>
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                <uix:Target DesignTimeRectangle="49, 268, 1819, 26" ElementType="InputBox" FriendlyName="'Camera model'" FullSelectorArgument="&lt;webctrl aaname=' Camera model: ' idx='1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Camera model: ' type='' tag='DIV' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                                              </scg:List>
+                                            </uix:TargetAnchorable.Anchors>
+                                          </uix:TargetAnchorable>
+                                        </uix:NTypeInto.Target>
+                                      </uix:NTypeInto>
+                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DeselectAfter="True" DisplayName="Type Into 'Live view'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="435.2,228" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="Simulate">
+                                        <uix:NTypeInto.OutUiElement>
+                                          <OutArgument x:TypeArguments="ui:UiElement">
+                                            <mca1:CSharpReference x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">uiLiveViewTextField</mca1:CSharpReference>
+                                          </OutArgument>
+                                        </uix:NTypeInto.OutUiElement>
+                                        <uix:NTypeInto.Target>
+                                          <uix:TargetAnchorable BrowserURL="http://localhost:4200/" DesignTimeRectangle="131, 294, 255, 26" ElementType="InputBox" FriendlyName="'data:image/jpeg;base64'" FullSelectorArgument="&lt;webctrl idx='1' name='liveview' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl type='text' name='liveview' tag='INPUT' aaname='' /&gt;" ImageBase64="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" InformativeScreenshot="6682ea1f02825cd1a00f58574eedad89.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='MyCanonCamera' /&gt;" SearchSteps="FuzzySelector, Image">
+                                            <uix:TargetAnchorable.Anchors>
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                                                <uix:Target DesignTimeRectangle="49, 294, 1819, 26" ElementType="InputBox" FriendlyName="'Live view:'" FullSelectorArgument="&lt;webctrl aaname=' Live view: ' idx='1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Live view: ' type='' tag='DIV' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                                                <uix:Target DesignTimeRectangle="1697, 386, 12, 35" FriendlyName="'firefox.exe MyCanonCame…'" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAAwAAAAjCAYAAACgj+sEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAAuSURBVDhP7csxAQAwEAKx+veGFxxQCzD8dkPGPElZEBqEBqFBaBAae7CdxXVwPvPyomj3Nu1rAAAAAElFTkSuQmCC" SearchSteps="Image" TargetType="ImageBased" />
+                                              </scg:List>
+                                            </uix:TargetAnchorable.Anchors>
+                                          </uix:TargetAnchorable>
+                                        </uix:NTypeInto.Target>
+                                        <uix:NTypeInto.Text>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <mca1:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_58">strLiveViewStream</mca1:CSharpValue>
+                                          </InArgument>
+                                        </uix:NTypeInto.Text>
+                                      </uix:NTypeInto>
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,399.2" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                                        <ui:CommentOut.Body>
+                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,320.8" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="None" DeselectAfter="False" DisplayName="Type Into 'camera settings'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="333.6,228" sap2010:WorkflowViewState.IdRef="NTypeInto_6">
+                                              <uix:NTypeInto.Target>
+                                                <uix:TargetAnchorable BrowserURL="http://localhost:4200/" DesignTimeRectangle="189, 320, 255, 26" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl name='settings' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl name='settings' tag='INPUT' type='text' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQMAAAAeCAYAAAAo7ns6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACKSURBVHhe7dZBCgIxFAXBOXcuH7VxBmT0Av4qeJBtsmhybOBmrfU+zXG8Lm1m901z/Qy+PYaZ/f9OHzEAZhEDIGIARAyAiAEQMQAiBkDEAIgYABEDIGIARAyAiAEQMQAiBkDEAIgYABEDIGIARAyAiAEQMQAiBkDEAMjPGJjZvJ2uGACziQHwtPcDh5xX+2/FCh8AAAAASUVORK5CYII=" InformativeScreenshot="2c0cb39885499986df1bf556c2e109b8.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='MyCanonCamera' /&gt;" SearchSteps="FuzzySelector, Image">
+                                                  <uix:TargetAnchorable.Anchors>
+                                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                      <uix:Target DesignTimeRectangle="49, 320, 1819, 26" ElementType="InputBox" FriendlyName="'Camera Settings'" FullSelectorArgument="&lt;webctrl aaname=' Camera Settings: ' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Camera Settings: ' tag='DIV' type='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABx8AAAAeCAYAAAD9ydAfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAqpSURBVHhe7d3/S5xHAsfx+58eHtiysovaiO0qRLZGgoQWNdydQSHoBiwsoYfg9iDwcM3RLpzQOwXvCC4LF8qFIkUIiFx+SAK2BEmxaWiRYwMWDuH55XMzz5f1eXR17cZCL/t+wcDu4zwzsyPz04eZ+Y1woT788MPoE4BuwboHAAAAAAAAACBE+HjBbAhBoVC6rwAAAAAAAAAAAMJHdKhV+EKhUN78AgAAAAAAAADAWQgf0RFCCKD7sO4BAAAAAAAAAO0QPqIjhBBA92HdAwAAAAAAAADaIXxERwghgO7DugcAAAAAAAAAtEP4iI4QQgDdh3UPAAAAAAAAAGiH8BEdIYQAug/rHgAAAAAAAADQTuvw8XBX60uTKvZm5TqOHMdVtreomepD7ftRnW7QeKKV8rgKuYyZg4uYh0Ptrpc089mz6Lvh7+uh94H+8CD6bjzzhk1fw/IS1X5tCCGA7sO6BwAAAAAAAAC0cyJ8PHziaTTjyHH7NDbvabVWU23V0/xYXxBEuiOedrohgGzc12zeBo4Z5YqTmpubM2VSxSiIzIze7WAeTJvm3eFkqvjM07B5Nns/+m4QPgL4NWLdAwAAAAAAAADaSYePjbqmexw5+VnVT2zt87W3MqEex1F+YdN8e7M9rgzIcfKavd+InsQO9eRjGw66un7vIHp2XucLH/8fEEIA3Yd1DwAAAAAAAABoJxU+hoFbj25tnBYtvlD1ala9V/6kp9ET+XuqtziatFTfOwoo78+a58PytrbkTV1SxtZzs7pcqmvP97X/oHy0o/DSlKmXDvwOd9dVKubC94KdiDOqpupEod6duu6a8bl2DIWPtW3+4u/VVR4vKGd3c0b99hZLqu+dHZ/en7X1Z03LLRysacK0lV3YjB5Y5nc89DQ1GB1Va/oZHC8f9ROFjOEc2WLm4y92XpLPwv7SOx+fyRs2f5s1c1UvNefJzQ5qyttSeqYa2qrO6HLWDeqEc2nmPHg//iV+2E58pG40H+u7h9Hfz4cQAug+rHsAAAAAAAAAQDuJ8PGRFvsdOf2L5tN5NbQ24YZHtJarqtVqWvXm9V5wXGleC5tR8BaEjz3K5zPqGyurWluV9/t3gvBr+No15TNDKlVrqlXL4bvudcWbCg8elNTnOsoMzchbDY+AnRmyAVxyV2IYPrquq/y1ilZrVS0t/1t+Y00T5l23b0xl277td/495W3oll9QPLxWXlRHgz6ur+zqPLHcs89GlXHc6PeFv2Wsz87NiDx7PuvB1/qy9pGumL77b3xqxvKlvv5mW7VPb6jfPLvykR3ftr63bbUKH/P5YJ5mvNXEHCR3X/ra8UaC4LU5xzNDyrjmPbubNQofD8z/osfUeef9peY4j895PJ/OsGd6b40QAug+rHsAAAAAAAAAQDtH4aNf17QNnKbr5z9S9bvPNZnLpI8RtR5XNGDaaj4PwkdHPabto516UdjpDOtO4vLEg7WJIFS7+cB+e6zKgCN3YkXpU2Cj0HOgYmpYUVjWf1tbiXrffT6pXObk3YnhDs+Tz1P8HS1fywfjdjI5FSfL8lb/pe3vfjo5Pwf3dN11NHB7Kx1U+uY32vFfv6cw1zvfsastw8dj8yTftGX6bO5ofFHVqGknb74fzXEcSB7VC3Z0Fu5oJ/gW8rduq9/8xvl//jd6QvgI4CTWPQAAAAAAAACgnaPwMT4WNJmCdSwMr/oXoz2UUfg4XU/GdlGodiwI084dFUzdYBjR58L8X4Ndlcny6Y3+REAXhWXnHXswnn7FwzvdoV5ur2hpsqje6ChTW9zsZZXWj3ZE+vVp8/wtvf/H9Bht+eiKfSc+vvU1wsfj8xQ/jwLCH5evmnda/KY4VI46iO+yvFb5Qk9f/byjVpMIIYDuw7oHAAAAAAAAALSTOHY1CvB+zs7H2OEr/fB0UzV73OncZPNewmYYGIWP6WwwHZ41JcO46L3TS7xD8uzw8fDVD3q6WVOtuqS5yWLz/sdTqp/q8NVzba8fHXk64u0EcxWGhclxHS8juvvctvAa4eOJXYjp5zt3CuadaaXy3UBUL+6gsaFyMP5wbJlcQePlqja58xFAG6x7AAAAAAAAAEA7ifAxCqna3Pn4aPFd5Qq/1WoQpjW0UR5SJgqy3Gyv3i6M68bSbHC34UWFj+n3WjklfEwFba6yvW+rMH5DS7NXztnuKfxv9edR06Z7Uzb7TIeFZ/nlwsdHi3Yn6DnCx4Cvn77ZVHVpUsXebHgsa+oOzfYIIYDuw7oHAAAAAAAAALSTCB/jIzl7dGvjlL2P0R2GTs8t2Sr+xi312DDt9ld6mdw4d7CmCRtoxYFXp+Hjo0X1m8/N41tP1Sp89LVxqycI8W5/9TJ1F2N4r+QZ4ePzzzTqnt3vxq23TBvhcapxexNr4c2Op/vlwsfTj101fSbvhmzh8OXfNd1j6lxd1o/Rs3YIIYDuw7oHAAAAAAAAALSTCh/VWNOEDarys6rvHw8gG9paHJFrjxu9G8ZgYUhW0J3UZYS+9lcmwt10ceDVafiox6oEYee06qlNeQ3Vp3vkZn+nf/zHfm8VPkbtH78r0d/XykR4f+PpeVzUrzuixYf7J46h9fdWNGHDutGqXtgHB/d03c7bsOkrWdnf0R0zhszgx9oOHvxy4aNeVDVq2smbhpJT1VhL/i929MlYTpl43DF/S7f7TR3CRwBnYN0DAAAAAAAAANpJh49GY2NB79ggze3T2Lyn1Vp4V+JkdHxpMtzyNxeUN8/cvg9UWTX1alWVxy8p42ZMiQMvo+Pw0YzHvGv7cDJDKlVNH6ue5sf6whA0unOxdfjoa3Mhb/p11fdBJfodZY1fysjNmHJiPGn+jqcR+xtMvUyuqMm5Oc2ZMlnMhcfMuiPymkmjrx3PBrOJuWjOWfI4000t2NByYFbV2pf62m6U/HFZV817PVcXzRi39b151FH4aMbwqPJuMC99Y2XTfk3V0pD5P7iJ8NG8dTcMkPvG5uXZcdr5fM/OU143H8Q7N6P5PNHnEUIIoPuw7gEAAAAAAAAA7ZwIHy1//6GqM0W9nYvvS8woVxhXeX03dXypDbz26iUV43qZnApTFX2x+62Wr5rvAxU9ttVeI3y0GltVzcShn2PvbiyqlBpLq/DR8PdULxWVy9j3bIhY0FTlC+1+GwZ+A5VgdKcK5mF+XIXmvYjhvZbFmaoentgZaueirPHBuK6dsyl5qZ2TvnaWp3QpGI+rm/bCyODezMvKBkHniO4+t1PQSfhoNbTlTWkwG+7szFwy/W+tHJubQz3520zirkczn4PHx0n4COAk1j0AAAAAAAAAoJ2W4SPeIH5d046jQvps3NdGCAF0H9Y9AAAAAAAAAKAdwsc3hT0CN9urhQfpHZmN+rR6HFez94/v1Hw9hBBA92HdAwAAAAAAAADaIXx8U/ibWsg7wd2YM96qavbOx/KY+lxH7oin5vWUF4QQAug+rHsAAAAAAAAAQDuEj28Qe0elN1Vo3nHpZgc1Xl7XbvqizgtBCAF0H9Y9AAAAAAAAAKAdwkd0hBAC6D6sewAAAAAAAABAO4SP6AghBNB9WPcAAAAAAAAAgHYIH9ERG0JQKJTuKwAAAAAAAAAAnIXwEQAAAAAAAAAAAMCFIHwEAAAAAAAAAAAAcAGk/wFfgvJvNszpoQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                                    </scg:List>
+                                                  </uix:TargetAnchorable.Anchors>
+                                                </uix:TargetAnchorable>
+                                              </uix:NTypeInto.Target>
+                                              <uix:NTypeInto.Text>
+                                                <InArgument x:TypeArguments="x:String">
+                                                  <mca1:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_104">strCameraSettings</mca1:CSharpValue>
+                                                </InArgument>
+                                              </uix:NTypeInto.Text>
+                                            </uix:NTypeInto>
+                                          </Sequence>
+                                        </ui:CommentOut.Body>
+                                      </ui:CommentOut>
+                                    </Sequence>
+                                  </ActivityAction>
+                                </uix:NApplicationCard.Body>
+                                <uix:NApplicationCard.OutUiElement>
+                                  <OutArgument x:TypeArguments="ui:UiElement">
+                                    <mca1:CSharpReference x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">uiBrowserWindow</mca1:CSharpReference>
+                                  </OutArgument>
+                                </uix:NApplicationCard.OutUiElement>
+                                <uix:NApplicationCard.TargetApp>
+                                  <uix:TargetApp Area="-9, -9, 1938, 1168" BrowserType="Firefox" IconBase64="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" InformativeScreenshot="730e56b83e17cd71aeb2f995ae44663e.png" Selector="&lt;html app='firefox.exe' url='http://localhost:4200/' /&gt;" Url="http://localhost:4200/" />
+                                </uix:NApplicationCard.TargetApp>
+                              </uix:NApplicationCard>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:ForEach.Body>
+                        <ui:ForEach.Values>
+                          <InArgument x:TypeArguments="sc:IEnumerable">
+                            <mca1:CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">Cameras</mca1:CSharpValue>
+                          </InArgument>
+                        </ui:ForEach.Values>
+                      </ui:ForEach>
+                      <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1027.2,3255.2" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_3">
+                        <ui:InterruptibleDoWhile.Body>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="992,3088" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - Live View" sap:VirtualizedContainerService.HintSize="950.4,2995.2" sap2010:WorkflowViewState.IdRef="ForEach`1_6">
+                              <ui:ForEach.Body>
+                                <ActivityAction x:TypeArguments="x:String">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="x:String" Name="camera" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="Sequence For Each Camera" sap:VirtualizedContainerService.HintSize="915.2,2860.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="873.6,2768" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="832,284.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                                        <ui:CommentOut.Body>
+                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="380.8,206.4" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke WaitCameraStatusReady workflow" sap:VirtualizedContainerService.HintSize="339.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="CameraTasks\\WaitCameraStatusReady.xaml">
+                                              <ui:InvokeWorkflowFile.Arguments>
+                                                <InOutArgument x:TypeArguments="s:Enum" x:Key="cameraStatus">
+                                                  <mca1:CSharpReference x:TypeArguments="s:Enum" sap2010:WorkflowViewState.IdRef="CSharpReference`1_29">cameraStatus</mca1:CSharpReference>
+                                                </InOutArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="cameraName">
+                                                  <mca1:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_92">camera</mca1:CSharpValue>
+                                                </InArgument>
+                                              </ui:InvokeWorkflowFile.Arguments>
+                                            </ui:InvokeWorkflowFile>
+                                          </Sequence>
+                                        </ui:CommentOut.Body>
+                                      </ui:CommentOut>
+                                      <ui:InterruptibleDoWhile DisplayName="Do While Camera Status IS NOT READY" sap:VirtualizedContainerService.HintSize="832,561.6" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_10">
+                                        <ui:InterruptibleDoWhile.Body>
+                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="524.8,394.4" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <mca:GetCameraStatus ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="483.2,22.4" sap2010:WorkflowViewState.IdRef="GetCameraStatus_7">
+                                              <mca:GetCameraStatus.CameraName>
+                                                <InArgument x:TypeArguments="x:String">
+                                                  <mca1:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_94">camera</mca1:CSharpValue>
+                                                </InArgument>
+                                              </mca:GetCameraStatus.CameraName>
+                                              <mca:GetCameraStatus.CameraStatus>
+                                                <OutArgument x:TypeArguments="s:Enum">
+                                                  <mca1:CSharpReference x:TypeArguments="s:Enum" sap2010:WorkflowViewState.IdRef="CSharpReference`1_30">cameraStatus</mca1:CSharpReference>
+                                                </OutArgument>
+                                              </mca:GetCameraStatus.CameraStatus>
+                                            </mca:GetCameraStatus>
+                                            <If sap:VirtualizedContainerService.HintSize="483.2,239.2" sap2010:WorkflowViewState.IdRef="If_8">
+                                              <If.Condition>
+                                                <InArgument x:TypeArguments="x:Boolean">
+                                                  <mca1:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_112">cameraStatus.CompareTo(Mihaly.Camera.Enums.EnumTypes.CameraStatus.DOWN) == 0</mca1:CSharpValue>
+                                                </InArgument>
+                                              </If.Condition>
+                                              <If.Then>
+                                                <Throw DisplayName="Throw Camera Shutdown Detected" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_5">
+                                                  <InArgument x:TypeArguments="s:Exception">
+                                                    <mca1:CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_96">new BusinessRuleException("Camera Shutdown detected!")</mca1:CSharpValue>
+                                                  </InArgument>
+                                                </Throw>
+                                              </If.Then>
+                                            </If>
+                                          </Sequence>
+                                        </ui:InterruptibleDoWhile.Body>
+                                        <ui:InterruptibleDoWhile.Condition>
+                                          <mca1:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_111">cameraStatus.CompareTo(Mihaly.Camera.Enums.EnumTypes.CameraStatus.READY) != 0</mca1:CSharpValue>
+                                        </ui:InterruptibleDoWhile.Condition>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:InterruptibleDoWhile>
+                                      <mca:UpdateCapture ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="832,85.6" sap2010:WorkflowViewState.IdRef="UpdateCapture_2">
+                                        <mca:UpdateCapture.CameraName>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <mca1:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">camera</mca1:CSharpValue>
+                                          </InArgument>
+                                        </mca:UpdateCapture.CameraName>
+                                        <mca:UpdateCapture.LiveView>
+                                          <OutArgument x:TypeArguments="s:Byte[]">
+                                            <mca1:CSharpReference x:TypeArguments="s:Byte[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">bytesLiveViewStream</mca1:CSharpReference>
+                                          </OutArgument>
+                                        </mca:UpdateCapture.LiveView>
+                                      </mca:UpdateCapture>
+                                      <ui:InterruptibleDoWhile DisplayName="Do While Camera Status IS NOT READY" sap:VirtualizedContainerService.HintSize="832,561.6" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_11">
+                                        <ui:InterruptibleDoWhile.Body>
+                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="524.8,394.4" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <mca:GetCameraStatus ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="483.2,22.4" sap2010:WorkflowViewState.IdRef="GetCameraStatus_8">
+                                              <mca:GetCameraStatus.CameraName>
+                                                <InArgument x:TypeArguments="x:String">
+                                                  <mca1:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_98">camera</mca1:CSharpValue>
+                                                </InArgument>
+                                              </mca:GetCameraStatus.CameraName>
+                                              <mca:GetCameraStatus.CameraStatus>
+                                                <OutArgument x:TypeArguments="s:Enum">
+                                                  <mca1:CSharpReference x:TypeArguments="s:Enum" sap2010:WorkflowViewState.IdRef="CSharpReference`1_31">cameraStatus</mca1:CSharpReference>
+                                                </OutArgument>
+                                              </mca:GetCameraStatus.CameraStatus>
+                                            </mca:GetCameraStatus>
+                                            <If sap:VirtualizedContainerService.HintSize="483.2,239.2" sap2010:WorkflowViewState.IdRef="If_9">
+                                              <If.Condition>
+                                                <InArgument x:TypeArguments="x:Boolean">
+                                                  <mca1:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_114">cameraStatus.CompareTo(Mihaly.Camera.Enums.EnumTypes.CameraStatus.DOWN) == 0</mca1:CSharpValue>
+                                                </InArgument>
+                                              </If.Condition>
+                                              <If.Then>
+                                                <Throw DisplayName="Throw Camera Shutdown Detected" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_6">
+                                                  <InArgument x:TypeArguments="s:Exception">
+                                                    <mca1:CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_100">new BusinessRuleException("Camera Shutdown detected!")</mca1:CSharpValue>
+                                                  </InArgument>
+                                                </Throw>
+                                              </If.Then>
+                                            </If>
+                                          </Sequence>
+                                        </ui:InterruptibleDoWhile.Body>
+                                        <ui:InterruptibleDoWhile.Condition>
+                                          <mca1:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_113">cameraStatus.CompareTo(Mihaly.Camera.Enums.EnumTypes.CameraStatus.READY) != 0</mca1:CSharpValue>
+                                        </ui:InterruptibleDoWhile.Condition>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:InterruptibleDoWhile>
+                                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SaveStreamToStorage workflow" sap:VirtualizedContainerService.HintSize="832,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Utils\\SaveStreamToStorage.xaml">
+                                        <ui:InvokeWorkflowFile.Arguments>
+                                          <OutArgument x:TypeArguments="x:String" x:Key="outUrl">
+                                            <mca1:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">strLiveViewStream</mca1:CSharpReference>
+                                          </OutArgument>
+                                          <InArgument x:TypeArguments="s:Byte[]" x:Key="inBytesStream">
+                                            <mca1:CSharpValue x:TypeArguments="s:Byte[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_65">bytesLiveViewStream</mca1:CSharpValue>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="inLiveViewDir">
+                                            <mca1:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_118">in_Config["LiveViewDir"].ToString()</mca1:CSharpValue>
+                                          </InArgument>
+                                        </ui:InvokeWorkflowFile.Arguments>
+                                      </ui:InvokeWorkflowFile>
+                                      <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State" sap:VirtualizedContainerService.HintSize="832,868" sap2010:WorkflowViewState.IdRef="NCheckState_1">
+                                        <uix:NCheckState.IfExists>
+                                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="475.2,690.4" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser for variable &quot;uiBrowserWindow&quot;" sap:VirtualizedContainerService.HintSize="433.6,500" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="Never" Version="V1">
+                                              <uix:NApplicationCard.Body>
+                                                <ActivityAction x:TypeArguments="x:Object">
+                                                  <ActivityAction.Argument>
+                                                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                                  </ActivityAction.Argument>
+                                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,322.4" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DeselectAfter="True" DisplayName="Type Into 'data:image/jpeg;base64'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,228" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="Simulate">
+                                                      <uix:NTypeInto.OutUiElement>
+                                                        <OutArgument x:TypeArguments="ui:UiElement">
+                                                          <mca1:CSharpReference x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpReference`1_22">uiLiveViewTextField</mca1:CSharpReference>
+                                                        </OutArgument>
+                                                      </uix:NTypeInto.OutUiElement>
+                                                      <uix:NTypeInto.Target>
+                                                        <uix:TargetAnchorable BrowserURL="http://localhost:4200/" DesignTimeRectangle="131, 294, 255, 26" ElementType="InputBox" FriendlyName="'data:image/jpeg;base64'" FullSelectorArgument="&lt;webctrl idx='1' name='liveview' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl type='text' name='liveview' tag='INPUT' aaname='' /&gt;" ImageBase64="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" InformativeScreenshot="6682ea1f02825cd1a00f58574eedad89.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='MyCanonCamera' /&gt;" SearchSteps="FuzzySelector, Image">
+                                                          <uix:TargetAnchorable.Anchors>
+                                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                                                              <uix:Target DesignTimeRectangle="49, 294, 1819, 26" ElementType="InputBox" FriendlyName="'Live view:'" FullSelectorArgument="&lt;webctrl aaname=' Live view: ' idx='1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Live view: ' type='' tag='DIV' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                                                              <uix:Target DesignTimeRectangle="1697, 386, 12, 35" FriendlyName="'firefox.exe MyCanonCame…'" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAAwAAAAjCAYAAACgj+sEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAAuSURBVDhP7csxAQAwEAKx+veGFxxQCzD8dkPGPElZEBqEBqFBaBAae7CdxXVwPvPyomj3Nu1rAAAAAElFTkSuQmCC" SearchSteps="Image" TargetType="ImageBased" />
+                                                            </scg:List>
+                                                          </uix:TargetAnchorable.Anchors>
+                                                        </uix:TargetAnchorable>
+                                                      </uix:NTypeInto.Target>
+                                                      <uix:NTypeInto.Text>
+                                                        <InArgument x:TypeArguments="x:String">
+                                                          <mca1:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_69">strLiveViewStream</mca1:CSharpValue>
+                                                        </InArgument>
+                                                      </uix:NTypeInto.Text>
+                                                    </uix:NTypeInto>
+                                                  </Sequence>
+                                                </ActivityAction>
+                                              </uix:NApplicationCard.Body>
+                                              <uix:NApplicationCard.InUiElement>
+                                                <InArgument x:TypeArguments="ui:UiElement">
+                                                  <mca1:CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">uiBrowserWindow</mca1:CSharpValue>
+                                                </InArgument>
+                                              </uix:NApplicationCard.InUiElement>
+                                              <uix:NApplicationCard.OutUiElement>
+                                                <OutArgument x:TypeArguments="ui:UiElement">
+                                                  <mca1:CSharpReference x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">uiBrowserWindow</mca1:CSharpReference>
+                                                </OutArgument>
+                                              </uix:NApplicationCard.OutUiElement>
+                                              <uix:NApplicationCard.TargetApp>
+                                                <uix:TargetApp Area="0, 0, 0, 0" />
+                                              </uix:NApplicationCard.TargetApp>
+                                            </uix:NApplicationCard>
+                                            <ui:Comment sap:VirtualizedContainerService.HintSize="433.6,56" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Update Capture and ..." />
+                                          </Sequence>
+                                        </uix:NCheckState.IfExists>
+                                        <uix:NCheckState.IfNotExists>
+                                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="304,156" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Assign sap:VirtualizedContainerService.HintSize="262.4,61.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Boolean">
+                                                  <mca1:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">bContinue</mca1:CSharpReference>
+                                                </OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </Sequence>
+                                        </uix:NCheckState.IfNotExists>
+                                        <uix:NCheckState.InUiElement>
+                                          <InArgument x:TypeArguments="ui:UiElement">
+                                            <mca1:CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">uiLiveViewTextField</mca1:CSharpValue>
+                                          </InArgument>
+                                        </uix:NCheckState.InUiElement>
+                                      </uix:NCheckState>
+                                    </Sequence>
+                                  </Sequence>
+                                </ActivityAction>
+                              </ui:ForEach.Body>
+                              <ui:ForEach.Values>
+                                <InArgument x:TypeArguments="sc:IEnumerable">
+                                  <mca1:CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">Cameras</mca1:CSharpValue>
+                                </InArgument>
+                              </ui:ForEach.Values>
+                            </ui:ForEach>
+                          </Sequence>
+                        </ui:InterruptibleDoWhile.Body>
+                        <ui:InterruptibleDoWhile.Condition>
+                          <mca1:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">bContinue</mca1:CSharpValue>
+                        </ui:InterruptibleDoWhile.Condition>
+                      </ui:InterruptibleDoWhile>
+                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - Stop Live View And Close Session" sap:VirtualizedContainerService.HintSize="1027.2,444.8" sap2010:WorkflowViewState.IdRef="ForEach`1_7">
+                        <ui:ForEach.Body>
+                          <ActivityAction x:TypeArguments="x:String">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:String" Name="camera" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="375.2,310.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info">
+                                <ui:LogMessage.Message>
+                                  <InArgument x:TypeArguments="x:Object">
+                                    <mca1:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">"Stop Live View And Close session with " + camera</mca1:CSharpValue>
+                                  </InArgument>
+                                </ui:LogMessage.Message>
+                              </ui:LogMessage>
+                              <mca:StopCapture CameraName="{x:Null}" ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="StopCapture_1" />
+                              <mca:StopSession ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="StopSession_1">
+                                <mca:StopSession.CameraName>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca1:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">camera</mca1:CSharpValue>
+                                  </InArgument>
+                                </mca:StopSession.CameraName>
+                              </mca:StopSession>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:ForEach.Body>
+                        <ui:ForEach.Values>
+                          <InArgument x:TypeArguments="sc:IEnumerable">
+                            <mca1:CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">Cameras</mca1:CSharpValue>
+                          </InArgument>
+                        </ui:ForEach.Values>
+                      </ui:ForEach>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Canon Camera Error" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_5" TopMost="True">
+                      <ui:MessageBox.Text>
+                        <InArgument x:TypeArguments="x:Object">
+                          <mca1:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">"No Camera Detected !"</mca1:CSharpValue>
+                        </InArgument>
+                      </ui:MessageBox.Text>
+                    </ui:MessageBox>
+                  </If.Else>
+                </If>
+              </Sequence>
+            </ActivityAction>
+          </mca:CanonCameras.Body>
+          <mca:CanonCameras.CapturePath>
+            <InArgument x:TypeArguments="x:String">
+              <mca1:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">imageDir</mca1:CSharpValue>
+            </InArgument>
+          </mca:CanonCameras.CapturePath>
+          <mca:CanonCameras.Result>
+            <OutArgument x:TypeArguments="x:Int32">
+              <mca1:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">result</mca1:CSharpReference>
+            </OutArgument>
+          </mca:CanonCameras.Result>
+        </mca:CanonCameras>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1524.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="Exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error">
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <mca1:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">"Exception during execution: " + Exception.Message + " at Source: " + Exception.Source</mca1:CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

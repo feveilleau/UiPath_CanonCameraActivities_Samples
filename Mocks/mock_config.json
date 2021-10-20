@@ -1,0 +1,12 @@
+{
+  "mockedWorkflows": [
+    {
+      "mockFilePath": "Mocks\\CameraTasks\\GetCameraCapabilities_mock.xaml",
+      "sourceWorkflowPath": "CameraTasks\\GetCameraCapabilities.xaml"
+    },
+    {
+      "mockFilePath": "Mocks\\CameraTasks\\SetCameraSettings_mock.xaml",
+      "sourceWorkflowPath": "CameraTasks\\SetCameraSettings.xaml"
+    }
+  ]
+}
